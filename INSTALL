@@ -1,0 +1,31 @@
+Building external vcore modules
+
+=== Table of Contents
+
+	=== 1. How to Build Vcore Modules
+		--- 1.1 Build
+		--- 1.2 Clean
+
+
+=== 1. How to Build Vcore Modules
+You have to specify prebuilt kernel directory for 'Z3-ITB BSP'.
+Modules(*.ko) will be installed in 'MTEKROOT_DIR/output/target/lib/modules/3.10.40+/extra'.
+
+	--- 1.1 Build
+		Usage:
+			$ git clone parkjyb@218.49.29.212:/home1/git-repo/repositories/z3_itb_project/dev-2.00/packages/vcore.git [VCORE_DIR]
+			$ make VCORE_DIR=[VCORE_DIR] MTEKROOT_KDIR=[WORK_DIR]/mtekroot/output/build/linux-z3-itb 
+
+		Example:
+			$ git clone parkjyb@218.49.29.212:/home1/git-repo/repositories/z3_itb_project/dev-2.00/packages/vcore.git vcore_modules
+			$ make VCORE_DIR=/home2/parkjyb/vcore MTEKROOT_KDIR=/home2/parkjyb/work/project/1.z3_itb/dev-2.00/mtekroot/output/build/linux-z3-itb
+
+		Install the module(s) to 'mtekroot/output/target/lib/modules/3.10.40+/extra'
+			$ ls MTEKROOT_DIR/output/target/lib/modules/3.10.40+/extra
+
+			cnm_8550j_module.ko
+		   	cnm_9x0_module.ko
+			png_module.ko
+
+	--- 1.2 Clean
+		$ make clean
